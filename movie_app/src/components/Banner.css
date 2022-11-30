@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+}
+.banner {
+  color: white;
+  object-fit: contain;
+  height: 448px;
+  position: relative;
+}
+.banner_title {
+  position: absolute;
+  bottom: 55%;
+  margin-left: 10px;
+}
+.banner_buttons {
+  position: absolute;
+  bottom: 40%;
+  left: 50px;
+}
+.banner_button_play {
+  width: 70px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.banner_button_info {
+  width: 130px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.banner_button_info:hover {
+  background-color: darkgray;
+}
+.banner_description {
+  position: absolute;
+  bottom: 10%;
+  width: 300px;
+  margin-left: 15px;
+  font-size: 15px;
+}
