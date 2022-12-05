@@ -1,0 +1,51 @@
+.title {
+  color: white;
+  padding-bottom: 40px;
+}
+.detail__poster-img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+}
+
+.description {
+  color: white;
+  padding: 0px 20px;
+  padding-bottom: 80px;
+  line-height: 200%;
+}
+.popularity_block {
+  color: white;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  display: flex;
+  font-size: 20px;
+}
+.runtime_block {
+  color: white;
+  display: flex;
+  padding-left: 30px;
+}
+.detail_middle {
+  display: flex;
+}
+
+.tagline {
+  color: white;
+  font-style: italic;
+  font-size: 40px;
+  padding: 30px 20px;
+}
+.button {
+  color: white;
+  border: 1px solid white;
+  width: 60px;
+  height: 50px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.detail_top {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+}

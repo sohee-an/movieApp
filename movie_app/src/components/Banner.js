@@ -2,15 +2,19 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Banner.css";
 import styled from "styled-components";
 import axios from "../api/axios";
+import MovieModal from "./MovieModal";
 import requests from "../api/requests";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [movieSelected, setMovieSelected] = useState({});
   const [settingVideoButton, setSettingVideoButton] = useState(true);
 
   useEffect(() => {
     //랜덤으로 무비 정보 가져오기
+
     fetchData();
   }, []);
 
@@ -41,8 +45,10 @@ const Banner = () => {
     }
   }, [movie]);
 
-  console.log(movie);
-  console.log(movie.videos?.results[0]);
+  const handleClick = (movie) => {
+    setModalOpen(true);
+    setMovieSelected(movie);
+  };
 
   if (isClicked) {
     return (
@@ -83,13 +89,21 @@ const Banner = () => {
                 Play
               </button>
             ) : undefined}
-            <button className="banner_button_info">More Information</button>
+            <button
+              className="banner_button_info"
+              onClick={() => handleClick(movie)}
+            >
+              More Information
+            </button>
           </div>
           <h1 className="banner_description">
             {truncate(movie?.overview, 100)}
           </h1>
         </div>
         <div className="banner_fadeBottom"></div>
+        {modalOpen && (
+          <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
+        )}
       </header>
     );
   }
