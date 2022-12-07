@@ -28,6 +28,7 @@ const DetailPage = () => {
       setSettingVideoButton(true);
     }
   }, [movie]);
+  console.log(movie.tagline);
 
   if (!movie) return <div>...loading</div>;
 
@@ -57,20 +58,22 @@ const DetailPage = () => {
         />
         <div className="detail-container">
           <div className="detail_top">
-            <h2 className="title">
-              {movie.original_title}({movie.title})
-            </h2>
+            <div className="title_release_date_container">
+              <h2 className="title">
+                {movie.original_title}({movie.title})
+              </h2>
+              <span className="release_date">{movie.release_date}</span>
+            </div>
             {settingVideoButton ? (
               <button className="button" onClick={() => setIsClicked(true)}>
                 Play
               </button>
             ) : undefined}
-            {/* <button className="button">video</button> */}
           </div>
           <dl className="detail_middle">
             <div className="popularity_block">
               <dt>평점:</dt>
-              <dd>{movie.popularity}</dd>
+              <dd>{movie.vote_average}</dd>
             </div>
             <div className="runtime_block">
               <dt>(runtime: </dt>
@@ -78,7 +81,9 @@ const DetailPage = () => {
             </div>
           </dl>
 
-          <p className="tagline">"{movie.tagline}"</p>
+          {movie.tagline === "" ? null : (
+            <em className="tagline">"{movie.tagline}"</em>
+          )}
           <p className="description">{movie.overview}</p>
         </div>
       </section>
