@@ -1,18 +1,32 @@
+* {
+  margin: 0;
+}
 .title {
   color: white;
   padding-bottom: 40px;
 }
 .detail__poster-img {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  display: block;
+  margin: auto auto;
   padding-bottom: 50px;
+}
+.title_release_date_container {
+  display: flex;
+}
+.release_date {
+  color: rgb(169, 160, 160);
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .description {
-  color: white;
+  color: rgb(155, 147, 147);
   padding: 0px 20px;
   padding-bottom: 80px;
-  line-height: 200%;
+  line-height: 1.8;
+  font-family: "Poppins", sans-serif;
+  text-indent: 2%;
 }
 .popularity_block {
   color: white;
@@ -31,10 +45,12 @@
 }
 
 .tagline {
-  color: white;
-  font-style: italic;
+  color: rgb(155, 147, 147);
   font-size: 40px;
+  display: block;
   padding: 30px 20px;
+  font-weight: 700;
+  font-family: serif;
 }
 .button {
   color: white;
@@ -43,6 +59,10 @@
   height: 50px;
   border-radius: 10%;
   cursor: pointer;
+}
+.button:hover {
+  color: red;
+  border-color: red;
 }
 .detail_top {
   margin: 15px;
